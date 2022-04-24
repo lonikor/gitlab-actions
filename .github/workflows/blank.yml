@@ -5,10 +5,42 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+#  build:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v3
+#      - name: Python Syntax Checker
+#        uses: cclauss/Find-Python-syntax-errors-action@v0.2.0
+
+  build-tomcat:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout tomcat users
         uses: actions/checkout@v3
-      - name: Python Syntax Checker
-        uses: cclauss/Find-Python-syntax-errors-action@v0.2.0
+      - name: List project files and java version
+        run: |
+          ls -ltr
+          java -version
+
+      - name: Checkout tomcat
+        uses: actions/checkout@v3
+        with:
+          repository: apache/tomcat
+          ref: master
+          path: ./tomcat
+
+      - name: Set up java
+        uses: actions/setup-java@v1
+        with:
+          java-version: '9.0.4'
+          java-package: 'jdk'
+          architecture: x64
+
+      - name: List project files and java version
+        run: |
+          ls -ltr
+          java -version
+
+      - name: Copy users.xml into tomcat configuration directory
+        run: cp -v tomcat-users.xml ./tomcat/conf/tomcat-users.xml
