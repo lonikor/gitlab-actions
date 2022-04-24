@@ -24,10 +24,10 @@ jobs:
           java -version
 
       - name: Checkout tomcat
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: apache/tomcat
-          ref: master
+          ref: main
           path: ./tomcat
 
       - name: Set up java
