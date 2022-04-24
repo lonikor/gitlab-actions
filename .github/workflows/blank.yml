@@ -5,29 +5,10 @@ on:
     branches: [ main ]
 
 jobs:
-  job1:
-    name: First job
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Step 1
-        run: date "+%H:%M:%S   %d/%m/%y"
-  job2:
-    name: Second job
-    runs-on: windows-latest
-    steps:
-      - name: Step 1
-        run: "Get-Date"
-  job3:
-    name: Third job
-    runs-on: macos-latest
-    steps:
-      - name: Print date
-        run: date +%F
-  job4:
-    needs: [job1, job2, job3]
-    runs-on: ubuntu-latest
-    name: Fourth job
-    steps:
-      - uses: actions/checkout@v3
-      - name: Zalupa
-        run: ls -la
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Python Syntax Checker
+        uses: cclauss/Find-Python-syntax-errors-action@v0.2.0
