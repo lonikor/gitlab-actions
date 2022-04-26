@@ -1,8 +1,12 @@
 name: first
 
 on:
-  push:
-    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Bump version
+        default: v1.0.0
+        required: true
 
 jobs:
 #  build:
