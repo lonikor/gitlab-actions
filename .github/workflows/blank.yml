@@ -1,8 +1,9 @@
 name: first
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - main
 
 jobs:
   test:
