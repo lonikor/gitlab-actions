@@ -2,8 +2,7 @@ name: first
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   test:
