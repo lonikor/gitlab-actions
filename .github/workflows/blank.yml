@@ -6,27 +6,33 @@ on:
       - main
 
 jobs:
-  test:
+  env:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Run python
-        run: python3 main.py
-      - name: Python Syntax Checker
-        uses: cclauss/Find-Python-syntax-errors-action@v0.2.0
+      - name: Env
+        run: env
 
-  build:
-    needs:
-      - test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: Hello python
-          path: .
+#  test:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v3
+#      - name: Run python
+#        run: python3 main.py
+#      - name: Python Syntax Checker
+#        uses: cclauss/Find-Python-syntax-errors-action@v0.2.0
+#
+#  build:
+#    needs:
+#      - test
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v3
+#      - name: Upload artifact
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: Hello python
+#          path: .
 
 
