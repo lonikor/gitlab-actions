@@ -1,16 +1,16 @@
 name: first
 
 on:
-  release:
-    types:
-      - published
+  push:
+    branches:
+      - main
 
 jobs:
   env:
     runs-on: ubuntu-latest
     steps:
       - name: Env
-        run: env | sort
+        run: cat ${env.GITHUB_EVENT_PATH}
 
 #  test:
 #    runs-on: ubuntu-latest
