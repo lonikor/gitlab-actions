@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Env
-        run: cat ${env.GITHUB_EVENT_PATH}
+        run: cat ${GITHUB_EVENT_PATH}
 
 #  test:
 #    runs-on: ubuntu-latest
