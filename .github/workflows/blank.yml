@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Env
-        run: printenv
+        run: env | sort
 
 #  test:
 #    runs-on: ubuntu-latest
