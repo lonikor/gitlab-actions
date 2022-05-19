@@ -1,13 +1,13 @@
-name: release
-
-on:
-  release:
-    types:
-      - published
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy
-        run: echo "Deploy haha"
+#name: release
+#
+#on:
+#  release:
+#    types:
+#      - published
+#
+#jobs:
+#  deploy:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Deploy
+#        run: echo "Deploy something"
