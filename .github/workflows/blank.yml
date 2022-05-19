@@ -1,16 +1,16 @@
-#name: first
-#
-#on:
-#  push:
-#    branches:
-#      - main
-#
-#jobs:
-#  env:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: Env
-#        run: cat ${GITHUB_EVENT_PATH}
+name: first
+
+on:
+  push:
+    branches:
+      - test
+
+jobs:
+  env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Env
+        run: cat ${GITHUB_EVENT_PATH}
 
 #  test:
 #    runs-on: ubuntu-latest
